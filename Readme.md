@@ -1,4 +1,4 @@
-# assert
+# assert [![GoDoc](https://godoc.org/github.com/tj/assert?status.svg)](https://godoc.org/github.com/tj/assert)
 
 Assertion pkg for Go, copied from [github.com/stretchr/testify's](//github.com/stretchr/testify) require package.
 
