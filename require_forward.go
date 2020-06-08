@@ -6,11 +6,11 @@
 package assert
 
 import (
-	assert "github.com/stretchr/testify/assert"
-	io "io"
 	http "net/http"
 	url "net/url"
 	time "time"
+
+	assert "github.com/stretchr/testify/assert"
 )
 
 // Condition uses a Comparison to assert a complex condition.
@@ -152,8 +152,8 @@ func (a *Assertions) GreaterOrEqual(e1 interface{}, e2 interface{}, msgAndArgs .
 //  a.HTTPBodyContains(myHandler, "GET", "www.google.com", nil, "I'm Feeling Lucky")
 //
 // Returns whether the assertion was successful (true) or not (false).
-func (a *Assertions) HTTPBodyContains(handler http.HandlerFunc, method string, url string, values url.Values, body io.Reader, str interface{}, msgAndArgs ...interface{}) {
-	HTTPBodyContains(a.t, handler, method, url, values, body, str, msgAndArgs...)
+func (a *Assertions) HTTPBodyContains(handler http.HandlerFunc, method string, url string, values url.Values, str interface{}, msgAndArgs ...interface{}) {
+	HTTPBodyContains(a.t, handler, method, url, values, str, msgAndArgs...)
 }
 
 // HTTPBodyNotContains asserts that a specified handler returns a
@@ -162,8 +162,8 @@ func (a *Assertions) HTTPBodyContains(handler http.HandlerFunc, method string, u
 //  a.HTTPBodyNotContains(myHandler, "GET", "www.google.com", nil, "I'm Feeling Lucky")
 //
 // Returns whether the assertion was successful (true) or not (false).
-func (a *Assertions) HTTPBodyNotContains(handler http.HandlerFunc, method string, url string, values url.Values, body io.Reader, str interface{}, msgAndArgs ...interface{}) {
-	HTTPBodyNotContains(a.t, handler, method, url, values, body, str, msgAndArgs...)
+func (a *Assertions) HTTPBodyNotContains(handler http.HandlerFunc, method string, url string, values url.Values, str interface{}, msgAndArgs ...interface{}) {
+	HTTPBodyNotContains(a.t, handler, method, url, values, str, msgAndArgs...)
 }
 
 // HTTPError asserts that a specified handler returns an error status code.

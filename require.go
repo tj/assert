@@ -6,7 +6,6 @@
 package assert
 
 import (
-	io "io"
 	http "net/http"
 	url "net/url"
 	time "time"
@@ -187,8 +186,8 @@ func GreaterOrEqual(t TestingT, e1 interface{}, e2 interface{}, msgAndArgs ...in
 //  assert.HTTPBodyContains(t, myHandler, "GET", "www.google.com", nil, "I'm Feeling Lucky")
 //
 // Returns whether the assertion was successful (true) or not (false).
-func HTTPBodyContains(t TestingT, handler http.HandlerFunc, method string, url string, values url.Values, body io.Reader, str interface{}, msgAndArgs ...interface{}) {
-	if !assert.HTTPBodyContains(t, handler, method, url, values, body, str, msgAndArgs...) {
+func HTTPBodyContains(t TestingT, handler http.HandlerFunc, method string, url string, values url.Values, str interface{}, msgAndArgs ...interface{}) {
+	if !assert.HTTPBodyContains(t, handler, method, url, values, str, msgAndArgs...) {
 		t.FailNow()
 	}
 }
@@ -199,8 +198,8 @@ func HTTPBodyContains(t TestingT, handler http.HandlerFunc, method string, url s
 //  assert.HTTPBodyNotContains(t, myHandler, "GET", "www.google.com", nil, "I'm Feeling Lucky")
 //
 // Returns whether the assertion was successful (true) or not (false).
-func HTTPBodyNotContains(t TestingT, handler http.HandlerFunc, method string, url string, values url.Values, body io.Reader, str interface{}, msgAndArgs ...interface{}) {
-	if !assert.HTTPBodyNotContains(t, handler, method, url, values, body, str, msgAndArgs...) {
+func HTTPBodyNotContains(t TestingT, handler http.HandlerFunc, method string, url string, values url.Values, str interface{}, msgAndArgs ...interface{}) {
+	if !assert.HTTPBodyNotContains(t, handler, method, url, values, str, msgAndArgs...) {
 		t.FailNow()
 	}
 }
