@@ -1,4 +1,4 @@
-// package assert implements the same assertions as the `assert` package but
+// Package assert implements the same assertions as the `assert` package but
 // stops test execution when a test fails.
 //
 // Example Usage
